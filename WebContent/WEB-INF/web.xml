@@ -4,4 +4,17 @@
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>IRS Database</servlet-name> 
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class> 
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name> 
+	  <param-value>irsDbase</param-value> 
+    </init-param> 
+  </servlet>
+  <servlet-mapping> 
+    <servlet-name>IRS Database</servlet-name> 
+    <url-pattern>/WebService/*</url-pattern> 
+  </servlet-mapping>   
 </web-app>

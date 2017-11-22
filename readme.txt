@@ -1,10 +1,14 @@
-jdk-8u152-linux-x64.tar.gz
-eclipse-jee-kepler-SR2-linux-gtk-x86_64.tar.gz
-apache-tomcat-7.0.82.tar.gz
-mysql-5.5.58-linux-glibc2.12-x86_64.tar.gz
-mysql-connector-java-5.1.44.tar.gz
-jstl-1.2.jar
 
+TODO:
+Include code for common title - JSP, JavaScript?
+
+
+2017-11-22
+
+Integrate Jersey RESTful Web Service
+
+
+2017-11-17
 
 [root@localhost ~]# /usr/local/mysql/bin/mysql -u root
 
@@ -21,5 +25,11 @@ mysql> select * from Accounts;
 +----------+--------+----------+---------------+--------+------+
 
 
-TODO:
-Include code for common title - JSP, JavaScript?
+jdk-8u152-linux-x64.tar.gz
+eclipse-jee-kepler-SR2-linux-gtk-x86_64.tar.gz
+apache-tomcat-7.0.82.tar.gz
+mysql-5.5.58-linux-glibc2.12-x86_64.tar.gz
+mysql-connector-java-5.1.44.tar.gz
+jstl-1.2.jar
+jaxrs-ri.zip
+

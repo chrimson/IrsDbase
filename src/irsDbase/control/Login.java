@@ -10,6 +10,7 @@ import irsDbase.model.*;
 /*
  * First servlet in the Control package
  * Processes entered login credentials
+ * http://localhost:8080/IrsDbase/
  */
 
 @WebServlet("/Login")

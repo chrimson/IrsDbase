@@ -1,12 +1,21 @@
 package irsDbase.model;
 
+import java.io.Serializable;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlRootElement; 
+
 /*
  * The Model element for a user account
  * Oddly, JSP JSTL can reference private members but
  * still requires corresponding getters
+ * More peculiar things happen with serialization
  */
 
-public class Account {
+@XmlRootElement(name = "Account") 
+public class Account implements Serializable {
+    private static final long serialVersionUID = 2L; 
+
 	private String first;
 	private String last;
 	private String username;
@@ -29,26 +38,32 @@ public class Account {
 		this.paid = paid;
 	}
 	
+    @XmlElement 
 	public String getFirst() {
 		return first;
 	}
 
+    @XmlElement 
 	public String getLast() {
 		return last;
 	}
 	
+    @XmlElement 
 	public String getUsername() {
 		return username;
 	}
 	
-	public String getPassword() {
+    @XmlTransient
+    public String getPassword() {
 		return password;
 	}
 	
+    @XmlElement
 	public int getIncome() {
 		return income;
 	}
 	
+    @XmlElement
 	public boolean getPaid() {
 		return paid;
 	}
