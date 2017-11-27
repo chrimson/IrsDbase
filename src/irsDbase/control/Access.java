@@ -10,7 +10,7 @@ public class Access {
 	public boolean granted = false;
 	public String fullName;
 	
-	public Access(String user, String pass) {
+	public Access(String username, String password) {
 		try {
 			// Instantiate database common class
 			Database db = new Database();
@@ -19,8 +19,8 @@ public class Access {
 					"FROM Accounts " +
 					"WHERE Username=? AND Password=ENCRYPT(?,'Trinity')"
 			);
-			query.setString(1, user);
-			query.setString(2, pass);
+			query.setString(1, username);
+			query.setString(2, password);
 	 
 			ResultSet result = query.executeQuery();
 

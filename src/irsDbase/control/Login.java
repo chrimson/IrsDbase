@@ -20,7 +20,7 @@ public class Login extends HttpServlet {
 		RequestDispatcher dispatcher;
 		
 		// Checks authentication of textbox fields entered in login.jsp
-		Access access = new Access(request.getParameter("user"), request.getParameter("pass"));
+		Access access = new Access(request.getParameter("username"), request.getParameter("password"));
 
 		if (access.granted) {
 			// Populate collection helper class with all database accounts 
