@@ -8,7 +8,8 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>IRS Database</title>
+		<%@ page import="irsDbase.control.Login" %>
+		<title><% out.print(Login.TITLE); %></title>
 	</head>
 	<body>
 		<form action="Login" method="POST">

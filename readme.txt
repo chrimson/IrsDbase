@@ -1,8 +1,4 @@
 
-TODO:
-Include code for common title - JSP, JavaScript?
-
-
 2017-11-27
 
 Follow REST URI convention, include specific retrieval, reorganize

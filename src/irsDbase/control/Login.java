@@ -15,6 +15,8 @@ import javax.servlet.http.*;
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	public static final String TITLE = "IRS Database";	
+			
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Where to send response
 		RequestDispatcher dispatcher;
