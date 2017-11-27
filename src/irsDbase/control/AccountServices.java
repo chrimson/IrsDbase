@@ -1,27 +1,29 @@
-package irsDbase.model;
+package irsDbase.control;
 
 import java.sql.*;
 import java.util.*;
 
 import javax.ws.rs.GET; 
 import javax.ws.rs.Path; 
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces; 
 import javax.ws.rs.core.MediaType; 
 
-import irsDbase.control.*;
+import irsDbase.model.*;
 
 /*
- * Wrapper Model class that holds Accounts collection
+ * Wrapper class that holds Accounts collection
  * and populates it referencing database
  * Provides Jersey RESTful web service retrieval
- * http://localhost:8080/IrsDbase/WebService/Records/tabulate
+ * http://localhost:8080/IrsDbase/rest/AccountServices/accounts
+ * http://localhost:8080/IrsDbase/rest/AccountServices/accounts/mac
  */
 
-@Path("/Records")
-public class Records {
+@Path("/AccountServices")
+public class AccountServices {
 	public List<Account> accounts = new ArrayList<Account>();
 	
-	public Records() {
+	public AccountServices() {
 		try {
 			// Instantiate database common class
 			Database db = new Database();
@@ -48,9 +50,24 @@ public class Records {
 	}
 	
     @GET 
-	@Path("/tabulate") 
+	@Path("/accounts") 
 	@Produces(MediaType.APPLICATION_JSON) 
-	public List<Account> tabulate() {
+	public List<Account> accounts() {
     	return accounts;
+    }
+    
+    @GET
+    @Path("/accounts/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Account getAccount(@PathParam("username") String username){
+      Account matched = null;
+      
+      for(int index = 0; index < accounts.size(); index ++) {
+         if(accounts.get(index).getUsername().equals(username)) {
+            matched = accounts.get(index);
+         }
+      }
+      
+      return matched;
     }
 }

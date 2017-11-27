@@ -15,6 +15,6 @@
   </servlet>
   <servlet-mapping> 
     <servlet-name>IRS Database</servlet-name> 
-    <url-pattern>/WebService/*</url-pattern> 
+    <url-pattern>/rest/*</url-pattern> 
   </servlet-mapping>   
 </web-app>

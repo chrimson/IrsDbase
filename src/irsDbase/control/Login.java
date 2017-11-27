@@ -5,8 +5,6 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
-import irsDbase.model.*;
-
 /*
  * First servlet in the Control package
  * Processes entered login credentials
@@ -25,13 +23,13 @@ public class Login extends HttpServlet {
 		Access access = new Access(request.getParameter("user"), request.getParameter("pass"));
 
 		if (access.granted) {
-			// Populate collection Model with all user accounts 
-			Records records = new Records();
+			// Populate collection helper class with all database accounts 
+			AccountServices service = new AccountServices();
 			
 			// Send logged in user's name and accounts to display View
 			dispatcher = request.getRequestDispatcher("WEB-INF/display.jsp");
 			request.setAttribute("fullName", access.fullName);
-			request.setAttribute("accounts", records.accounts);
+			request.setAttribute("accounts", service.accounts);
 		}
 		else
 		{
