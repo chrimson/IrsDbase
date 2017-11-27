@@ -38,9 +38,7 @@ public class AccountServices {
 					results.getString("First"),
 					results.getString("Last"),
 					results.getString("Username"),
-					results.getString("Password"),
-					results.getInt("Income"),
-					results.getBoolean("Paid")));
+					results.getInt("Income")));
 			}
 			
 			db.close();

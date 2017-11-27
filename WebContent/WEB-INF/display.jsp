@@ -23,7 +23,6 @@
 				<th>Last</th>
 				<th>Username</th>
 				<th>Income</th>
-				<th>Paid</th>
 			</tr>
 			<c:forEach var="account" items="${accounts}">
 			<tr>
@@ -31,7 +30,6 @@
 				<td><c:out value="${account.last}"/></td>
 				<td><c:out value="${account.username}"/></td>
 				<td><c:out value="${account.income}"/></td>
-				<td><c:out value="${account.paid}"/></td>
 			</tr>
 			</c:forEach>
 		</table>

@@ -3,6 +3,7 @@
 
 Follow REST URI convention, include specific retrieval, reorganize
 
+Remove security, private info
 
 2017-11-22
 
